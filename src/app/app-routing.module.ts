@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth-guard/auth.guard';
+import { RisksComponent } from './protected/risks/risks.component';
 
 const routes: Routes = [
   { path: 'public',
@@ -10,6 +11,10 @@ const routes: Routes = [
     path: 'protected',
     canActivate: [AuthGuard],
     loadChildren: () => import('./protected/protected.module').then(m => m.ProtectedModule)
+  },
+  {
+    path: 'risks', 
+    component: RisksComponent
   },
   {
     // Redirects all paths that are not matching to the 'public' route/path
