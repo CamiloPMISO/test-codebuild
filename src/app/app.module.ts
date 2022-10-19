@@ -1,27 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import localeEs from '@angular/common/locales/es-CO'
 import { registerLocaleData } from '@angular/common';
 
-import { RouterModule, Routes } from '@angular/router';
-
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { PlanComponent } from './plan/plan.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 registerLocaleData(localeEs, 'es');
-
-const routes: Routes = [
-  {path: '', redirectTo: 'planes', pathMatch: 'full'},
-  {path: 'planes', component: PlanComponent},
-];
-
+import { AppRoutingModule } from './app-routing.module';
 import { JwtModule } from '@auth0/angular-jwt';
 
 export const LOCALSTORAGE_TOKEN_KEY = 'sport_app_token';
@@ -32,17 +18,11 @@ export function tokenGetter() {
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    PlanComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes),
-    BrowserAnimationsModule,
     AppRoutingModule,
-    HttpClientModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
