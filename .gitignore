@@ -103,4 +103,24 @@ dist
 # TernJS port file
 .tern-port
 
-.angular
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# Miscellaneous
+/.angular/cache
+/.firebase/
+.sass-cache/
+/connect.lock
+/coverage
+/libpeerconnection.log
+firebase-debug.log
+testem.log
+/typings
+
+# e2e
+protractor-results*.txt
