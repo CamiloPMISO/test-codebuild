@@ -19,6 +19,11 @@ const routes: Routes = [
         component: RegisterComponent
       }
     ]
+  },
+  {
+    path: '**',
+    redirectTo: 'home',
+    pathMatch: 'full'
   }
 ];
 
