@@ -3,9 +3,7 @@ import { CommonModule } from '@angular/common';
 import { PlanComponent } from './plan.component';
 
 @NgModule({
-  imports: [
-    CommonModule
-  ],
-  declarations: [PlanComponent]
+  imports: [CommonModule],
+  declarations: [PlanComponent],
 })
-export class PlanModule { }
+export class PlanModule {}

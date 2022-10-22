@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
-import localeEs from '@angular/common/locales/es-CO'
+import localeEs from '@angular/common/locales/es-CO';
 import { registerLocaleData } from '@angular/common';
 
 registerLocaleData(localeEs, 'es');
@@ -17,9 +17,7 @@ export function tokenGetter() {
 }
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -28,11 +26,11 @@ export function tokenGetter() {
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
-        allowedDomains: ['localhost:3000', 'localhost:8080']
-      }
-    })
+        allowedDomains: ['localhost:3000', 'localhost:8080'],
+      },
+    }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

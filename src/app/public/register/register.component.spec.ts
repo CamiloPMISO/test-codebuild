@@ -12,23 +12,24 @@ export function tokenGetter() {
   return localStorage.getItem(LOCALSTORAGE_TOKEN_KEY);
 }
 
-
 describe('RegisterComponent', () => {
   let component: RegisterComponent;
   let fixture: ComponentFixture<RegisterComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports : [ReactiveFormsModule, HttpClientTestingModule,     
+      imports: [
+        ReactiveFormsModule,
+        HttpClientTestingModule,
         JwtModule.forRoot({
-        config: {
-          tokenGetter: tokenGetter,
-          allowedDomains: ['localhost:3000', 'localhost:8080']
-        }
-      })],
-      declarations: [ RegisterComponent ]
-    })
-    .compileComponents();
+          config: {
+            tokenGetter: tokenGetter,
+            allowedDomains: ['localhost:3000', 'localhost:8080'],
+          },
+        }),
+      ],
+      declarations: [RegisterComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(RegisterComponent);
     component = fixture.componentInstance;
