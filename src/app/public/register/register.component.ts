@@ -33,7 +33,7 @@ export class RegisterComponent implements OnInit {
       .register(user)
       .pipe(
         // If registration was successfull, then navigate to login route
-        tap(() => this.router.navigate(['../../protected/dashboard']))
+        tap(() => this.router.navigate(['../../protected/login']))
       )
       .subscribe();
   }

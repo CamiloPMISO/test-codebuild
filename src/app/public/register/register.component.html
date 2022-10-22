@@ -3,7 +3,7 @@
     <div class="col-3 p-3">
       <div class="card text-white">
         <div class="card-header text-center">
-          <h4>Registrate a la app</h4>
+          <h1>Registrate a la app</h1>
         </div>
         <div class="card-body">
           <form
@@ -24,17 +24,17 @@
               <label for="password"> Contraseña* </label>
               <input
                 id="password"
-                type="text"
+                type="password"
                 class="form-control"
                 formControlName="password"
                 placeholder="Ingresa contraseña" />
             </div>
 
             <div class="form-group mx-sm-3 mb-2">
-              <label for="confirmPassword"> confirmar contraseña* </label>
+              <label for="confirmPassword"> Confirmar contraseña* </label>
               <input
                 id="confirmPassword"
-                type="text"
+                type="password"
                 class="form-control"
                 formControlName="confirmPassword"
                 placeholder="Ingresa contraseña nuevamente" />
@@ -45,9 +45,17 @@
             </div>
 
             <div class="row m-3">
-              <button type="submit" class="btn btn-success">Registrar</button>
+              <button type="submit" class="btn btn-success btn-lg btn-block">
+                Registrar
+              </button>
             </div>
           </form>
+        </div>
+        <div class="card-footer text-center">
+          <p class="card-text">¿Ya eres un miembro?</p>
+          <a class="card-link text-white" [routerLink]="['../login']"
+            >Iniciar sesión</a
+          >
         </div>
       </div>
     </div>

@@ -9,6 +9,7 @@ registerLocaleData(localeEs, 'es');
 import { AppRoutingModule } from './app-routing.module';
 import { JwtModule } from '@auth0/angular-jwt';
 import { HttpClientModule } from '@angular/common/http';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 export const LOCALSTORAGE_TOKEN_KEY = 'sport_app_token';
 
@@ -23,6 +24,7 @@ export function tokenGetter() {
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
+    MatSnackBarModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
