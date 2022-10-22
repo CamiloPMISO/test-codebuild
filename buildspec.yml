@@ -28,7 +28,7 @@ phases:
       - npm run test:ci
   post_build:
     commands:
-      - aws s3 sync ./dist/sport-app-front-2 s3://sport-app-front --acl 'public-read' --delete
+      - aws s3 sync ./dist/sport-app-front-2 s3://sport-app-front
 artifacts:
   files:
       - '**/*'
