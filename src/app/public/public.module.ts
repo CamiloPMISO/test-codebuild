@@ -7,20 +7,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { PublicComponent } from './public.component';
 import { RouterModule } from '@angular/router';
 
-
-
-
 @NgModule({
-  declarations: [
-    RegisterComponent,
-    HomeComponent,
-    PublicComponent
-  ],
+  declarations: [RegisterComponent, HomeComponent, PublicComponent],
   imports: [
     CommonModule,
     PublicRoutingModule,
     ReactiveFormsModule,
-    RouterModule
-  ]
+    RouterModule,
+  ],
 })
-export class PublicModule { }
+export class PublicModule {}

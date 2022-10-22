@@ -8,7 +8,6 @@ import { FooterComponent } from './footer/footer.component';
 import { PlanComponent } from './plan/plan.component';
 import { ProtectedComponent } from './protected.component';
 
-
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -17,9 +16,6 @@ import { ProtectedComponent } from './protected.component';
     PlanComponent,
     ProtectedComponent,
   ],
-  imports: [
-    CommonModule,
-    ProtectedRoutingModule,
-  ]
+  imports: [CommonModule, ProtectedRoutingModule],
 })
-export class ProtectedModule { }
+export class ProtectedModule {}
