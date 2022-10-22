@@ -1,12 +1,16 @@
 <header>
   <!-- Navbar -->
   <nav class="navbar navbar-light bg-light justify-content-center">
-    <a class="navbar-brand" href="#"> SportApp </a>
+    <a class="navbar-brand" href="#">
+      <img src="/assets/logo.png" alt="..." height="36" />
+    </a>
   </nav>
   <!-- Navbar -->
 </header>
 <body>
-  <div class="bg">
+  <div
+    class="bg-container"
+    [ngStyle]="{ 'background-image': 'url(' + backgroundImage + ')' }">
     <router-outlet></router-outlet>
   </div>
 </body>

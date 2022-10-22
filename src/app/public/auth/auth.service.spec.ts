@@ -12,6 +12,8 @@ export function tokenGetter() {
   return localStorage.getItem(LOCALSTORAGE_TOKEN_KEY);
 }
 
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 describe('AuthService', () => {
   let service: AuthService;
 
@@ -19,6 +21,7 @@ describe('AuthService', () => {
     TestBed.configureTestingModule({
       imports: [
         HttpClientTestingModule,
+        MatSnackBarModule,
         JwtModule.forRoot({
           config: {
             tokenGetter: tokenGetter,
