@@ -1,0 +1,264 @@
+<div class="container-fluid">
+    <h1 align="center">Información del deportista</h1>
+  
+    <mat-horizontal-stepper>
+    
+    <mat-step label="Información General">
+        <div style="padding-top: 3%;">
+            <form [formGroup]="formGeneralInfo">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group mx-sm-3 mb-4">
+                            <label class= "font-weight-bold" for="name"> Nombre </label>
+                            <input
+                              novalidate
+                              id="name"
+                              class="form-control"
+                              formControlName="name"
+                              placeholder="Nombre" />
+                        </div>
+                    </div>    
+                    <div class="col-6">
+                        <div class="form-group mx-sm-3 mb-4">
+                            <label class= "font-weight-bold" for="lastName"> Apellido </label>
+                            <input
+                              novalidate
+                              id="lastName"
+                              class="form-control"
+                              formControlName="lastName"
+                              placeholder="Apellido" />
+                        </div>
+                    </div>    
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group mx-sm-3 mb-4">
+                            <label class= "font-weight-bold" for="identificationType"> Tipo de identifación </label>
+                            <select class="form-control" formControlName="identificationType">
+                                <option value="" disabled>Selecciona el tipo de identifación</option>
+                                <option *ngFor="let identificationType of identificationTypes" value={{identificationType}}>{{identificationType}}</option>
+                            </select>
+                        </div>    
+                    </div>    
+                    <div class="col-6">
+                        <div class="form-group mx-sm-3 mb-4">
+                            <label class= "font-weight-bold" for="identificationNumber"> Número de identifiación </label>
+                            <input
+                              novalidate
+                              id="identificationNumber"
+                              class="form-control"
+                              formControlName="identificationNumber"
+                              placeholder="Número de identifiación" />
+                        </div>
+                    </div>    
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group mx-sm-3 mb-4">
+                            <label class= "font-weight-bold" for="identificationType"> Género </label>
+                            <select class="form-control" formControlName="gender">
+                                <option value="" disabled>Seleccione género</option>
+                                <option *ngFor="let gender of genders" value={{gender}}>{{gender}}</option>
+                            </select>
+                        </div>    
+                    </div>       
+                </div>
+                <br/>
+                <div class="row ">
+                    <div class="col-3">
+                        <button class="btn btn-primary .btn-block"  matStepperNext>Siguiente</button>
+                    </div>
+                </div>    
+            </form>
+        </div>
+    </mat-step>
+    
+    <mat-step label="Información Demográfica">
+        <div style="padding-top: 3%;">
+            <form [formGroup]="formDemograficInfo">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group mx-sm-3 mb-4">
+                            <label class= "font-weight-bold" for="OriginCountry"> País de origen </label>
+                            <select class="form-control" formControlName="OriginCountry">
+                                <option value="" disabled>Selecciona el país de origen</option>
+                                <option *ngFor="let country of countries" value={{country}}>{{country}}</option>
+                            </select>
+                        </div>    
+                    </div>    
+                    <div class="col-6">
+                        <div class="form-group mx-sm-3 mb-4">
+                            <label class= "font-weight-bold" for="OriginCity"> Ciudad de origen </label>
+                            <select class="form-control" formControlName="OriginCity">
+                                <option value="" disabled>Selecciona la ciudad de origen</option>
+                                <option *ngFor="let city of cities" value={{city}}>{{city}}</option>
+                            </select>
+                        </div>    
+                    </div>    
+                </div>
+                <div class="row">
+                        <div class="col-6">
+                            <div class="form-group mx-sm-3 mb-4">
+                                <label class= "font-weight-bold" for="CurrentCountry"> País de origen </label>
+                                <select class="form-control" formControlName="CurrentCountry">
+                                    <option value="" disabled>Selecciona el país de origen</option>
+                                    <option *ngFor="let country of countries" value={{country}}>{{country}}</option>
+                                </select>
+                            </div>    
+                        </div>    
+                        <div class="col-6">
+                            <div class="form-group mx-sm-3 mb-4">
+                                <label class= "font-weight-bold" for="CurrentCity"> Ciudad de origen </label>
+                                <select class="form-control" formControlName="CurrentCity">
+                                    <option value="" disabled>Selecciona la ciudad de origen</option>
+                                    <option *ngFor="let city of cities" value={{city}}>{{city}}</option>
+                                </select>
+                            </div>    
+                        </div>    
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group mx-sm-3 mb-4">
+                            <label class= "font-weight-bold" for="yearInCurrentCity"> Antigüedad de residencia </label>
+                            <input
+                              novalidate
+                              id="yearInCurrentCity"
+                              class="form-control"
+                              formControlName="yearInCurrentCity"
+                              placeholder="Años" />
+                        </div>  
+                    </div>       
+                </div>
+                <br/>
+                <div class="row ">
+                    <div class="col-1 mr-2">
+                        <button class="btn btn-primary .btn-block"  matStepperPrevious>Anterior </button>
+                    </div>
+                    <div class="col-1">
+                        <button class="btn btn-primary .btn-block"  matStepperNext>Siguiente</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </mat-step>
+    
+    <mat-step label="Información Deportiva">
+        <div style="padding-top: 3%;">
+            <form [formGroup]="formSportInfo">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="form-group mx-sm-3 mb-4">
+                            <label class= "font-weight-bold" for="age"> Edad </label>
+                            <input
+                              novalidate
+                              id="age"
+                              class="form-control"
+                              formControlName="age"
+                              placeholder="Años" />
+                        </div>  
+                    </div>      
+                    <div class="col-4">
+                        <div class="form-group mx-sm-3 mb-4">
+                            <label class= "font-weight-bold" for="weight"> Peso </label>
+                            <input
+                              novalidate
+                              id="weight"
+                              class="form-control"
+                              formControlName="weight"
+                              placeholder="Peso en Kg" />
+                        </div>    
+                    </div>    
+                    <div class="col-4">
+                        <div class="form-group mx-sm-3 mb-4">
+                            <label class= "font-weight-bold" for="height"> Altura </label>
+                            <input
+                            novalidate
+                            id="height"
+                            class="form-control"
+                            formControlName="height"
+                            placeholder="Altura en cm" />
+                        </div>    
+                    </div>    
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group mx-sm-3 mb-4">
+                            <label class= "font-weight-bold mb-2" for="sports"> Deportes de interés </label>
+                            <div class="form-check" *ngFor="let sport of sports; let i=index">
+                                <label>
+                                  <input class="form-check-input" type="checkbox" [value]="sport" (change)="onCheckboxChange($event)" />
+                                  {{sport}}
+                                </label>
+                            </div>
+                        </div>    
+                    </div>       
+                </div>
+                <br/>
+                <div class="row ">
+                    <div class="col-1 mr-2">
+                        <button class="btn btn-primary .btn-block"  matStepperPrevious>Anterior </button>
+                    </div>
+                    <div class="col-1">
+                        <button class="btn btn-primary .btn-block"  matStepperNext>Siguiente</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </mat-step>
+
+    <mat-step label="Información Alimenticia">
+        <div style="padding-top: 3%;">
+            <form [formGroup]="formNutritionInfo">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group mx-sm-3 mb-4">
+                            <label class= "font-weight-bold" for="alergies"> ¿ Eres intolerante o alergico algún alimento ? </label>
+                            <div class="input-group mb-3">
+                                <input
+                                novalidate
+                                id="alergies"
+                                class="form-control"
+                                formControlName="alergies"
+                                placeholder="Alimento" />
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary .btn-block" (click)=addAlergy(formNutritionInfo.value.alergies)><i class="fa fa-sharp fa-solid fa-plus"></i></button>
+                                </div>
+                            </div>                  
+                        </div>  
+                    </div>      
+                </div>
+                <div *ngIf="alergies.length > 0">
+                    <label class= "font-weight-bold ml-3" for="alergies"> Intolerancias o alergias registradas </label>
+                    <ul>
+                        <li *ngFor="let alergie of alergies">
+                           <span>{{alergie}}</span>
+                        </li>
+                      </ul>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group mx-sm-3 mb-4">
+                            <label class= "font-weight-bold mb-2" for="preferences"> Preferencias de alimentos </label>
+                            <select class="form-control" formControlName="preferences">
+                                <option value="" disabled>Selecciona si tienes alguna de estás preferencias</option>
+                                <option *ngFor="let preference of preferences" value={{preference}}>{{preference}}</option>
+                            </select>
+                        </div>    
+                    </div>       
+                </div>
+                <br/>
+                <div class="row ">
+                    <div class="col-1 mr-2">
+                        <button class="btn btn-primary .btn-block"  matStepperPrevious>Anterior </button>
+                    </div>
+                    <div class="col-1">
+                        <button class="btn btn-success .btn-block"  (click)=submit()  [disabled]="!formGeneralInfo.valid && !formDemograficInfo.valid && !formSportInfo.valid && !formNutritionInfo.valid">Finalizar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </mat-step>
+        
+    </mat-horizontal-stepper>
+</div>
+

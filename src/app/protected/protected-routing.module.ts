@@ -4,33 +4,38 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { PlanComponent } from './plan/plan.component';
 import { ProtectedComponent } from './protected.component';
+import { PostRegisterComponent } from './post-register/post-register.component';
 
-// Routes for child Module (protectedModule). Since protected module is lazy loaded in in the 
+// Routes for child Module (protectedModule). Since protected module is lazy loaded in in the
 // app-routing.module the full path is `/protected/dashboard`
 const routes: Routes = [
   {
     path: '',
     component: ProtectedComponent,
     children: [
-      { 
-        path: 'planes', 
-        component: PlanComponent 
+      {
+        path: 'post-register',
+        component: PostRegisterComponent,
       },
-      { 
-        path: 'dashboard', 
-        component: DashboardComponent 
-      }
-    ]
+      {
+        path: 'planes',
+        component: PlanComponent,
+      },
+      {
+        path: 'dashboard',
+        component: DashboardComponent,
+      },
+    ],
   },
   {
     path: '**',
     redirectTo: 'dashboard',
-    pathMatch: 'full'
-  }
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class ProtectedRoutingModule { }
+export class ProtectedRoutingModule {}

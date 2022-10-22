@@ -6,21 +6,20 @@ import { PublicRoutingModule } from './public-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PublicComponent } from './public.component';
 import { RouterModule } from '@angular/router';
-
-
-
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     RegisterComponent,
     HomeComponent,
-    PublicComponent
+    PublicComponent,
+    LoginComponent,
   ],
   imports: [
     CommonModule,
     PublicRoutingModule,
     ReactiveFormsModule,
-    RouterModule
-  ]
+    RouterModule,
+  ],
 })
-export class PublicModule { }
+export class PublicModule {}

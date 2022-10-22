@@ -17,13 +17,15 @@ describe('AuthService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule,
+      imports: [
+        HttpClientTestingModule,
         JwtModule.forRoot({
           config: {
             tokenGetter: tokenGetter,
-            allowedDomains: ['localhost:3000', 'localhost:8080']
-          }
-        })]
+            allowedDomains: ['localhost:3000', 'localhost:8080'],
+          },
+        }),
+      ],
     });
     service = TestBed.inject(AuthService);
   });

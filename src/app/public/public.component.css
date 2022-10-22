@@ -1,19 +1,19 @@
-body,
-html {
+html, body {
+  margin:0;
+  height:79%;
+  overflow:hidden;
+}
+
+div[ng-view] {
   height: 100%;
 }
 
-div[ng-view]{
-    height: 100%;
-}
-
-.bg {
-  /* The image used */
+.bg-container {
   background-image: url('/assets/training.jpg');
-  /* Full height */
-  height:80vh;
-  /* Center and scale the image nicely */
+  background-size: cover;
+  width:100%;
+  height:100%;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
 }
+

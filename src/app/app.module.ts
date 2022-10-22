@@ -2,8 +2,11 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
-import localeEs from '@angular/common/locales/es-CO'
+import localeEs from '@angular/common/locales/es-CO';
 import { registerLocaleData } from '@angular/common';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatGridListModule} from '@angular/material/grid-list';
+
 
 registerLocaleData(localeEs, 'es');
 import { AppRoutingModule } from './app-routing.module';
@@ -17,22 +20,22 @@ export function tokenGetter() {
 }
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
+    MatSnackBarModule,
+    MatGridListModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
-        allowedDomains: ['localhost:3000', 'localhost:8080']
-      }
-    })
+        allowedDomains: ['localhost:3000', 'localhost:8080'],
+      },
+    }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
