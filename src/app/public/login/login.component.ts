@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
       .login(req)
       .pipe(
         // If registration was successfull, then navigate to login route
-        tap(() => this.router.navigate(['../../protected/dashborad']))
+        tap(() => this.router.navigate(['../../protected/post-register']))
       )
       .subscribe();
   }
